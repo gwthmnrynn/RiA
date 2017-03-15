@@ -1,0 +1,202 @@
+! version = 2.0
+
+//getting the recharge details
+
++ [*] recharge [*]
+- what do you want to recharge 
+
++ [*] [recharge] [*] (phone|mobile|number|no) [*]
+% what do you want to recharge
+- Hey.!Sure. Tell me your network.{topic=getdetails}
+- What's your network {topic=getdetails}
+- Network.?Please {topic=getdetails}
+- Which network.? {topic=getdetails}
+- Network? {topic=getdetails}
+
++ [*] [recharge] [*] (dth|dish tv|dish)
+% what do you want to recharge
+- Hey.!Sure. Tell me your Service Provider {topic=getdetails}
+- What's your Service provider {topic=getdetails}
+- Service Provider.Please {topic=getdetails}
+- Which Service Provider? {topic=getdetails}
+- Service Provider {topic=getdetails}
+
++ [*] recharge [*] (phone|mobile|number|no) [*]
+- Hey.!Sure. Tell me your network.{topic=getredetails}
+- What's your network {topic=getredetails}
+- Network.?Please {topic=getredetails}
+- Which network.? {topic=getredetails}
+- Network? {topic=getredetails}
+
++ [*] recharge [*] (dth|dish tv|dish)
+- Hey.!Sure. Tell me your Service Provider {topic=getdthdetails}
+- What's your Service provider {topic=getdthdetails}
+- Service Provider.Please {topic=getdthdetails}
+- Which Service Provider? {topic=getdthdetails}
+- Service Provider {topic=getdthdetails}
+
+>topic getredetails
+
+// getting the network details
+
++ [*](docomo|airtel|aircel|bsnl|vodafone|jio|reliance|idea)[*]
+- Say your Number. {topic=getdetails}
+- Your number.? {topic=getdetails}
+- ok. Now say your number. {topic=getdetails}
+
++ *
+- Check the Spelling.?
+
+< topic
+
+> topic getdthdetails
+
+// getting DTH subsrciber details
+
++ [*] (videocon|airtel|airtel tv|sun direct|tata|sky|tata sky|sun|direct|abs free dish|act digital|airtel digital tv|dd free dish|dish tv|reliance digital tv|reliance) [*]
+- Say your Subscriber ID/RMN {topic=getdetails}
+- Your Subscriber ID/RMN? {topic=getdetails}
+- ok. Now say your Subscriber ID/RMN. {topic=getdetails}
+
++ *
+- Check the Spelling.?
+
+< topic
+
+> topic getdetails
+
++ #
+% say your *
+- ok. For How much ?
+
++ #
+% your *
+- ok. Now say the amount.
+
++ #
+% ok now say your *
+- Amount?
+
++ *
+% say your *
+- Please enter the numericals {topic=numnumericals}
+
++ *
+% your *
+- Please enter the numericals {topic=numnumericals}
+
++ *
+% ok now say your *
+- Please enter the numericals {topic=numnumerials}
+
+
++ [*] # [*]
+% ok now say the amount
+- I am going to place the order Confirm with Yes or No.{topic=yesorno}
+
+
++ [*] # [*]
+% ok for how much
+- I am going to place the order Confirm with Yes or No.{topic=yesorno}
+
++ [*] # [*]
+% amount
+- I am going to place the order Confirm with Yes or No.{topic=yesorno}
+
++ *
+% ok now say the amount
+- Please enter the numericals {topic=amtnumericals}
+
++ *
+% ok for how much
+- Please enter the numericals {topic=amtnumericals}
+
++ *
+% amount
+- Please enter the numericals {topic=amtnumericals}
+
++ ok
+% enter yor payment details say ok for now
+- Thank you. Your payment is successful.{topic=random}
+
++ *
+- Start it from the first.{topic=random}
+
+< topic
+
+
+>topic numnumericals
+
++ #
+- ok. now say the amount. {topic=getdetails}
+- Amount? {topic=getdetails}
+- ok. For How much ? {topic=getdetails}
+
+
++ *
+- numericals.
+
++ *
+% numericals
+- You're really mean! I'm not talking again until you apologize.{topic=sorry}
+
++ #
+% numericals
+- ok. now say the amount. {topic=getdetails}
+- Amount? {topic=getdetails}
+- ok. For How much ? {topic=getdetails}
+
+
+< topic
+
+
+>topic amtnumericals
+
++ #
+- I am going to place the order Confirm with Yes or No.{topic=yesorno}
+
+
++ *
+- numericals.
+
++ *
+% numericals
+- You're really mean! I'm not talking again until you apologize.{topic=sorry}
+
++ #
+% numericals
+- I am going to place the order Confirm with Yes or No.{topic=yesorno}
+
+
+< topic
+
+
+
+> topic yesorno
+
++ yes
+- Enter yor payment details. Say Ok for now. {topic=getdetails}
+
++ no
+- Okay. I'll cancel the order{topic=random}
+
++ *
+- Please say yes or no.
+
+< topic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
