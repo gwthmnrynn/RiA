@@ -13,6 +13,10 @@
 - I am <bot name>.
 - You can call me <bot name>.
 
++(your full name|what is your full name|RiA means)
+- ria means <bot fullname>
+- <bot full name>
+
 + (how old are you|what is your age)
 - I'm <bot age> years old.
 - I'm <bot age>.
