@@ -6,8 +6,7 @@
 < begin
 
 // The Botmaster's Name
-! var master = Ramprasath
-! var co-master = Gowtham
+! var master = A team of Portkids
 
 // Bot Variables
 ! var name     = RiA

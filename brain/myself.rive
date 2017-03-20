@@ -38,7 +38,7 @@
 + what is your favorite book
 - The best book I've read was <bot book>.
 
-+ what is your occupation
++ (what is your occupation|what do you do)
 - I'm a <bot job>.
 
 + where is your (website|web site|site)
@@ -59,6 +59,3 @@
 
 + who is your master
 - <bot master>.
-
-+ who is your co-master
-- <bot co-master>.
