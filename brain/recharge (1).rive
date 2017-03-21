@@ -5,26 +5,26 @@
 + [*] recharge [*]
 - what do you want to recharge 
 
-+ [*] [recharge] [*] (phone|mobile|number|no) [*]
++ [*] [recharge] [*] (phone|mobile|number|no|mob) [*]
 % what do you want to recharge
-- Hey.!Sure. Tell me your network.{topic=getdetails}
-- What's your network {topic=getdetails}
-- Network.?Please {topic=getdetails}
-- Which network.? {topic=getdetails}
-- Network? {topic=getdetails}
-
-+ [*] [recharge] [*] (dth|dish tv|dish)
-% what do you want to recharge
-- Hey.!Sure. Tell me your Service Provider {topic=getdetails}
-- What's your Service provider {topic=getdetails}
-- Service Provider.Please {topic=getdetails}
-- Which Service Provider? {topic=getdetails}
-- Service Provider {topic=getdetails}
-
-+ [*] recharge [*] (phone|mobile|number|no) [*]
 - Hey.!Sure. Tell me your network.{topic=getredetails}
 - What's your network {topic=getredetails}
 - Network.?Please {topic=getredetails}
+- Which network.? {topic=getredetails}
+- Network? {topic=getredetails}
+
++ [*] [recharge] [*] (dth|dish tv|dish)
+% what do you want to recharge
+- Hey.!Sure. Tell me your Service Provider {topic=getdthdetails}
+- What's your Service provider {topic=getdthdetails}
+- Service Provider.Please {topic=getdthdetails}
+- Which Service Provider? {topic=getdthdetails}
+- Service Provider {topic=getdthdetails}
+
++ [*] recharge [*] (phone|mobile|number|no|mob) [*]
+- Hey.!Sure. Tell me your network.{topic=getredetails}
+- What's your network {topic=getredetails}
+- Network.?Please {topic=getredetails}s
 - Which network.? {topic=getredetails}
 - Network? {topic=getredetails}
 
@@ -66,15 +66,8 @@
 > topic getdetails
 
 + #
-% say your *
 - ok. For How much ?
-
-+ #
-% your *
 - ok. Now say the amount.
-
-+ #
-% ok now say your *
 - Amount?
 
 + *
@@ -87,13 +80,11 @@
 
 + *
 % ok now say your *
-- Please enter the numericals {topic=numnumerials}
-
+- Please enter the numericals {topic=numnumericals}s
 
 + [*] # [*]
 % ok now say the amount
 - I am going to place the order Confirm with Yes or No.{topic=yesorno}
-
 
 + [*] # [*]
 % ok for how much
