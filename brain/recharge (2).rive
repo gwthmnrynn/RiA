@@ -66,8 +66,15 @@
 > topic getdetails
 
 + #
+% say your *
 - ok. For How much ?
+
++ #
+% your *
 - ok. Now say the amount.
+
++ #
+% ok now say your *
 - Amount?
 
 + *

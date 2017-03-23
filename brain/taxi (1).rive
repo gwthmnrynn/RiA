@@ -1,0 +1,88 @@
+! version = 2.0
+
+//getting taxi booking details
+
++ [*] taxi [*]
+- give me pickup location {topic=getpickuplocation}
+- yeah sure! from where do i want to book {topic=getpickuplocation}
+
+>topic getpickuplocation
+// getting the Pickup location details
+
++ [*] [pickup] [*] (|chennai|coimbatore|pollachi) [*]
+% give me pickup location
+- hey sure ! give me the drop location {topic=getdroplocation}
+
++ [*] [pickup] [*] (bangalore|chennai|coimbatore|pollachi) [*]
+% yeah sure! from where do i want to book //{topic=getdroplocation}
+- hey sure ! give me the drop location //{topic=getdroplocation}
+
++ #
+- enter alphabets
+
++ * 
+- Check the Spelling.?
+
+< topic
+
+>topic getdroplocation
+// getting the drop location details
+
++ [*] drop [*] (bangalore|chennai|coimbatore|pollachi) [*]
+% hey sure ! give me the drop location
+- okay finding route and getting calculating cost please wait{topic=findrouteandcost}
+
++ #
+- enter alphabets.
+
++ * 
+- Check Spelling?
+
+< topic
+
+>topic findrouteandcost
+
++ [*] okay [*]
+% okay finding route  and getting calculating cost please wait
+- route found and estimated cost is 200.shall i book taxi?{topic=yesorno}
+
++ #
+- enter alphabets
+
++ *
+- Check the Spelling.?
+
+<topic
+
+> topic yesorno
+
++ yes
+% route found and estimated cost is 200.shall i book taxi?
+- Enter yor payment details. Say Ok for now. {topic=getdetails}
+
++ no
+% route found and estimated cost is 200.shall i book taxi?
+- Okay. I'll cancel the order{topic=random}
+
++ *
+- Please say yes or no.
+
+< topic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
